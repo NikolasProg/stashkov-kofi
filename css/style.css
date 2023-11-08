@@ -62,7 +62,7 @@ button:hover {
 
 #form {
 	display: none;
-	width: 30%;
+	width: 90%;
 	flex-direction: column;
 	padding: 20px;
 	box-sizing: border-box;
