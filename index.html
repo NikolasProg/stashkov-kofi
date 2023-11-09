@@ -19,10 +19,20 @@
 <form id="form">
     <label>ФИО <span>*</span></label>
     <input type="text" placeholder="Иван Иванович Иванов" id="user_name">
-	<label>Почта <span>*</span></label>
-    <input type="text" placeholder="Email" id="user_email">
+	<label>Username <span>*</span></label>
+    <input type="text" placeholder="@Username" id="user_email">
 	<label>Номер телефона <span>*</span></label>
     <input type="text" placeholder="+7 (999) 999-99-99" id="user_phone">
+	<label>Выберите кофе: <span>*</span></label>
+	<select id="user_kofe">
+        <option value="first">Экспрессо</option>
+        <option value="second">Раф</option>
+	    <option value="third">Американо</option>
+        <option value="fourth">Капучино</option>
+	    <option value="fifth">Мокка</option>
+    </select>
+	<label>Коментарий <span>*</span></label>
+    <input type="text" placeholder="Коментарий баристе" id="user_koment">				  
 	<div id="error"></div>
     <button id="order">Оформить</button>
 </form>
@@ -44,6 +54,8 @@ document.getElementById("error").innerText = '';
 let name = document.getElementById("user_name").value;
 let email = document.getElementById("user_email").value;
 let phone = document.getElementById("user_phone").value;
+let kofe = document.getElementById("user_kofe").value;
+let koment = document.getElementById("user_koment").value;
 if (name.length < 5){
 document.getElementById("error").innerText = "Ошибка в имени";
 return;
@@ -60,7 +72,9 @@ return;
 let data = {
 name: name,
 email: email,
-phone: phone
+phone: phone,
+kofe: kofe,
+koment: koment
 }
 tg.sendData(JSON.stringify(data));
 
