@@ -1,49 +1,51 @@
-	* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	}
-	
-	body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Montserrat', sans-serif;
-	font-weight: 200;
+    font-weight: 200;
+    font-size: 18px;
     color: var(--tg-theme-text-color);
     background-color: var(--tg-theme-bg-color);
+    margin: 20px;
 }
 
 #main {
     width: 100%;
-	padding: 20px;
-	text-align: center;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
     margin-top: 50px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 img {
     width: 200px;
-	margin: 50px auto;
+    margin: 50px auto;
 }
 
 p {
     width: 350px;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 button {
     border: 0;
-	border-radius: 5px;
-	margin-top: 50px;
-	height: 60px;
-	width: 200px;
-	font-size: 20px;
-	font-weight: 500;
-	cursor: pointer;
-	transition: all 500ms ease;
-	color: var(--tg-theme-button-color);
-	background: (--tg-theme-button-text-color);
+    border-radius: 5px;
+    margin-top: 20px; /* Измененное значение margin-top */
+    height: 60px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: var(--tg-theme-button-color);
+    background: var(--tg-theme-button-text-color); /* Исправлено свойство background */
 }
 
 button:hover {
@@ -51,63 +53,111 @@ button:hover {
 }
 
 :root {
-    --tg-theme-text-color: #4b280a; /* Замените #000 на ваш цвет */
-    --tg-theme-bg-color: #e4c0a8; /* Замените #fff на ваш цвет */
-    --tg-theme-button-text-color: rad; /* Замените #333 на ваш цвет */
-}
-
-button:hover {
-    background: #dece78;
+    --tg-theme-text-color: #4b280a;
+    --tg-theme-bg-color: #e4c0a8;
+    --tg-theme-button-color: #333; /* Добавлен цвет текста кнопки */
+    --tg-theme-button-text-color: green; /* Изменен цвет фона кнопки */
 }
 
 #form {
-	display: none;
-	width: 90%;
-	flex-direction: column;
-	padding: 20px;
-	box-sizing: border-box;
-	text-align: center;
+    display: none;
+    width: 90%;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-input{
-	width: 98%;
-	outline: none;
-	margin: 10px 5%;
-	padding: 15px 10px;
-	font-size: 14px;
-	border: 2px solid silver;
-	border-radius: 5px;
+input {
+    width: 98%;
+    outline: none;
+    margin: 10px 1%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
 }
 
-select{
-	width: 100%;
-	outline: none;
-	margin: 10px 5%;
-	padding: 15px 10px;
-	font-size: 14px;
-	border: 2px solid silver;
-	border-radius: 5px;
-
+select {
+    width: 100%;
+    outline: none;
+    margin: 10px 1%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
 }
 
 input:focus {
-	border-color: #4b280a;
+    border-color: #4b280a;
 }
 
-#form label span{
-	color: red;
+#form label span {
+    color: red;
 }
 
-#form label,#form input{
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
+#form label,
+#form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
-#form label{
-	margin-bottom: 5px;
-	font-weight: bold;
+
+#form label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
-#form input{
-	padding: 10px 15px;
-	margin-top: 10px;
+
+#form input {
+    padding: 10px 15px;
+    margin-top: 10px;
 }
+
+/* Стили из style_tea.css */
+
+h2 {
+    margin-left: 30px;
+}
+
+.container {
+    display: none;
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 20px;
+}
+
+.img {
+    width: 150px;
+}
+
+.item {
+    text-align: center;
+    height: 100px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(248, 168, 24);
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
+}
+
+.btn:hover {
+    background: lightgreen;
+}
+
+.usercard {
+    text-align: center;
+}
+
