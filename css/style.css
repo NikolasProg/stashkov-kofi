@@ -21,7 +21,7 @@ button.btn0 {
 }
 
 button.btn1 {
-	margin: 200px;
+    margin: 40px;
     height: 70px; /* Новая высота кнопки */
     width: 150px; /* Новая ширина кнопки */
     font-size: 18px; /* Новый размер шрифта кнопки */
