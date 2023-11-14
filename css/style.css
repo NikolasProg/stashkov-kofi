@@ -13,6 +13,18 @@ body {
     margin: 0px;
 }
 
+button.btn0 {
+	margin: 20px;
+    height: 70px; /* Новая высота кнопки */
+    width: 150px; /* Новая ширина кнопки */
+    font-size: 18px; /* Новый размер шрифта кнопки */
+}
+
+img.bot {
+    width: 150px; /* Новая ширина изображения */
+    margin: 20px auto; /* Новый отступ у изображения */
+}
+
 #main {
     width: 100%;
     padding: 20px;
