@@ -26,22 +26,16 @@ h1 {
 
 img {
     width: 200px;
-    margin: 50px auto;
-}
-
-p {
-    width: 350px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 button {
     border: 0;
     border-radius: 5px;
-    margin-top: 20px; /* Измененное значение margin-top */
     height: 60px;
-    width: 200px;
-    font-size: 20px;
-    font-weight: 500;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 50;
     cursor: pointer;
     transition: all 500ms ease;
     color: var(--tg-theme-button-color);
@@ -119,10 +113,6 @@ input:focus {
 
 /* Стили из style_tea.css */
 
-h2 {
-    margin-left: 30px;
-}
-
 .container {
     display: none;
     max-width: 390px;
@@ -132,7 +122,7 @@ h2 {
 .inner {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 300px 300px;
+    grid-template-rows: 220px 220px;
     gap: 20px;
 }
 
@@ -147,7 +137,7 @@ h2 {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+
     border: none;
     background: rgb(248, 168, 24);
     border-radius: 10px;
@@ -213,3 +203,4 @@ h2 {
     .item {
         height: auto; /* Высота элемента автоматически подстраивается под контент */
     }
+}
