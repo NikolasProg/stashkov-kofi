@@ -68,6 +68,10 @@ button:hover {
     text-align: center;
 }
 
+#tea {
+	display: none;
+}
+
 input {
     width: 98%;
     outline: none;
