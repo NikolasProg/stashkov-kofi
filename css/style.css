@@ -14,6 +14,7 @@ body {
 }
 
 button.btn0 {
+	border: 2px solid black;
 	margin: 20px;
     height: 70px; /* Новая высота кнопки */
     width: 150px; /* Новая ширина кнопки */
@@ -21,6 +22,7 @@ button.btn0 {
 }
 
 button.btn1 {
+	border: 2px solid black;
     margin: 40px;
     height: 70px; /* Новая высота кнопки */
     width: 150px; /* Новая ширина кнопки */
@@ -59,7 +61,7 @@ img {
 }
 
 button {
-    border: 0;
+	border: 2px solid black;
     border-radius: 5px;
     height: 50px;
     width: 100px;
@@ -77,7 +79,7 @@ button:hover {
 
 :root {
     --tg-theme-text-color: #4b280a;
-    --tg-theme-bg-color: #e4c0a8;
+    --tg-theme-bg-color: white;
     --tg-theme-button-color: #333; /* Добавлен цвет текста кнопки */
     --tg-theme-button-text-color: green; /* Изменен цвет фона кнопки */
 }
@@ -165,8 +167,8 @@ input:focus {
 }
 
 .btn {
+	border: 2px solid black;
     display: inline-block;
-    border: none;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     color: #000000;
