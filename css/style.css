@@ -121,6 +121,11 @@ input:focus {
     border-color: #4b280a;
 }
 
+#form {
+  max-width: 400px; /* Ширина формы */
+  margin: 0 auto;   /* Устанавливаем автоматичесные отступы слева и справа для центрирования */
+}
+
 #form label span {
     color: red;
 }
@@ -155,6 +160,11 @@ input:focus {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 160px 160px;
     gap: 20px;
+}
+
+.usercard {
+  text-align: center; /* Для выравнивания по центру */
+  font-weight: bold;   /* Для использования жирного шрифта */
 }
 
 .img {
