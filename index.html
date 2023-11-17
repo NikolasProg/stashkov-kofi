@@ -128,13 +128,13 @@
             }
 
             let data = {
-			    coffeeName: coffeeName,
                 name: name,
                 email: email,
                 phone: phone,
                 obym: obym,
                 kolvo: kolvo,
-                koment: koment
+                koment: koment,
+		coffeeName: coffeeName
             }
 
             tg.sendData(JSON.stringify(data));
