@@ -106,9 +106,9 @@
         // Обработчики для кнопок btn1, btn2, ..., btn6
 for (let i = 1; i <= 6; i++) {
     let btn = document.getElementById(`btn${i}`);
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (event) => {
         // Получаем текст кнопки (название кофе)
-        let coffeeName = btn.innerText;
+        let coffeeName = event.target.innerText;
 
         // Вызываем функцию для заполнения данных в usercard
         fillUserData(coffeeName);
@@ -164,6 +164,7 @@ order.addEventListener("click", () => {
     tg.sendData(JSON.stringify(data));
     tg.close();
 });
+
     </script>
 </body>
 </html>
