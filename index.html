@@ -103,16 +103,39 @@
             fillUserData();
         });
 
-        order.addEventListener("click", () => {
+        // Обработчики для кнопок btn1, btn2, ..., btn6
+for (let i = 1; i <= 6; i++) {
+    let btn = document.getElementById(`btn${i}`);
+    btn.addEventListener("click", () => {
+        // Получаем текст кнопки (название кофе)
+        let coffeeName = btn.innerText;
+
+        // Вызываем функцию для заполнения данных в usercard
+        fillUserData(coffeeName);
+
+        // Переключаем видимость блоков
+        document.getElementById("tea").style.display = "none";
+        document.getElementById("form").style.display = "block";
+    });
+}
+
+// Обработчик для кнопки заказа
+order.addEventListener("click", () => {
+    // Очистка сообщения об ошибке
     document.getElementById("error").innerText = '';
+
+    // Получение данных из формы
     let name = document.getElementById("user_name").value;
     let email = document.getElementById("user_email").value;
     let phone = document.getElementById("user_phone").value;
     let obym = document.getElementById("user_obym").value;
     let kolvo = document.getElementById("user_kolvo").value;
     let koment = document.getElementById("user_koment").value;
-    let coffeeName = document.getElementById("user").innerText; // Добавляем coffeeName
 
+    // Получаем coffeeName из usercard
+    let coffeeName = document.getElementById("user").innerText.replace("Выбранный товар: ", "");
+
+    // Валидация данных
     if (name.length < 5) {
         document.getElementById("error").innerText = "Ошибка в имени";
         return;
@@ -126,6 +149,7 @@
         return;
     }
 
+    // Формирование объекта данных
     let data = {
         name: name,
         email: email,
@@ -133,38 +157,13 @@
         obym: obym,
         kolvo: kolvo,
         koment: koment,
-        coffeeName: coffeeName // Добавляем coffeeName в объект data
-    }
+        coffeeName: coffeeName
+    };
 
+    // Отправка данных в бот
     tg.sendData(JSON.stringify(data));
     tg.close();
 });
-
-
-       // Обновленная функция для заполнения данных в usercard
-    function fillUserData(coffeeName) {
-        // Получаем ссылку на элемент usercard
-        var userCard = document.getElementById('user');
-
-        // Заполняем usercard с использованием переданного названия кофе
-        userCard.innerHTML = '<p>Выбранный товар: ' + coffeeName + '</p>';
-    }
-
-    // Обновленные обработчики для кнопок btn1, btn2, ..., btn6
-    for (let i = 1; i <= 6; i++) {
-        let btn = document.getElementById(`btn${i}`);
-        btn.addEventListener("click", () => {
-            // Получаем текст кнопки (название кофе)
-            let coffeeName = btn.innerText;
-
-            // Вызываем функцию для заполнения данных в usercard
-            fillUserData(coffeeName);
-
-            // Переключаем видимость блоков
-            document.getElementById("tea").style.display = "none";
-            document.getElementById("form").style.display = "block";
-        });
-    }
     </script>
 </body>
 </html>
