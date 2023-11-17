@@ -104,67 +104,67 @@
             fillUserData();
         });
 
-        order.addEventListener("click", () => {
-            document.getElementById("error").innerText = '';
-            let name = document.getElementById("user_name").value;
-            let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
-            let obym = document.getElementById("user_obym").value;
-            let kolvo = document.getElementById("user_kolvo").value;
-            let koment = document.getElementById("user_koment").value;
-            let coffeeName = document.getElementById("name_coffee").value;
-
-            if (name.length < 5) {
-                document.getElementById("error").innerText = "Ошибка в имени";
-                return;
-            }
-            if (email.length < 5) {
-                document.getElementById("error").innerText = "Ошибка в email";
-                return;
-            }
-            if (phone.length < 5) {
-                document.getElementById("error").innerText = "Ошибка в номере телефона";
-                return;
-            }
-
-            let data = {
-                name: name,
-                email: email,
-                phone: phone,
-                obym: obym,
-                kolvo: kolvo,
-                koment: koment,
-		coffeeName: coffeeName
-            }
-
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        });
-
         // Обновленная функция для заполнения данных в name_coffee
-        function fillUserData(coffeeName) {
-            // Получаем ссылку на элемент name_coffee
-            var nameCoffeeInput = document.getElementById('name_coffee');
+    function updateCoffeeName(coffeeName) {
+        // Получаем ссылку на элемент name_coffee
+        var nameCoffeeInput = document.getElementById('name_coffee');
 
-            // Заполняем name_coffee с использованием переданного названия кофе
-            nameCoffeeInput.value = coffeeName;
+        // Заполняем name_coffee с использованием переданного названия кофе
+        nameCoffeeInput.value = coffeeName;
+    }
+
+    // Обновленные обработчики для кнопок btn1, btn2, ..., btn6
+    for (let i = 1; i <= 6; i++) {
+        let btn = document.getElementById(`btn${i}`);
+        btn.addEventListener("click", () => {
+            // Получаем текст кнопки (название кофе)
+            let coffeeName = btn.innerText;
+
+            // Вызываем функцию для заполнения данных в name_coffee
+            updateCoffeeName(coffeeName);
+
+            // Переключаем видимость блоков
+            document.getElementById("tea").style.display = "none";
+            document.getElementById("form").style.display = "block";
+        });
+    }
+
+        order.addEventListener("click", () => {
+        document.getElementById("error").innerText = '';
+        let name = document.getElementById("user_name").value;
+        let email = document.getElementById("user_email").value;
+        let phone = document.getElementById("user_phone").value;
+        let obym = document.getElementById("user_obym").value;
+        let kolvo = document.getElementById("user_kolvo").value;
+        let koment = document.getElementById("user_koment").value;
+        let coffeeName = document.getElementById("name_coffee").value;
+
+        if (name.length < 5) {
+            document.getElementById("error").innerText = "Ошибка в имени";
+            return;
+        }
+        if (email.length < 5) {
+            document.getElementById("error").innerText = "Ошибка в email";
+            return;
+        }
+        if (phone.length < 5) {
+            document.getElementById("error").innerText = "Ошибка в номере телефона";
+            return;
         }
 
-        // Обновленные обработчики для кнопок btn1, btn2, ..., btn6
-        for (let i = 1; i <= 6; i++) {
-            let btn = document.getElementById(`btn${i}`);
-            btn.addEventListener("click", () => {
-                // Получаем текст кнопки (название кофе)
-                let coffeeName = btn.innerText;
-
-                // Вызываем функцию для заполнения данных в name_coffee
-                fillUserData(coffeeName);
-
-                // Переключаем видимость блоков
-                document.getElementById("tea").style.display = "none";
-                document.getElementById("form").style.display = "block";
-            });
+        let data = {
+            coffeeName: coffeeName,
+            name: name,
+            email: email,
+            phone: phone,
+            obym: obym,
+            kolvo: kolvo,
+            koment: koment
         }
+
+        tg.sendData(JSON.stringify(data));
+        tg.close();
+    });
     </script>
 </body>
 </html>
